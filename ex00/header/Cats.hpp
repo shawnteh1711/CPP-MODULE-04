@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cats.hpp                                           :+:      :+:    :+:   */
+/*   Cats.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 20:39:13 by steh              #+#    #+#             */
-/*   Updated: 2022/09/03 21:43:49 by steh             ###   ########.fr       */
+/*   Updated: 2022/09/04 19:38:49 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CAT_HPP
 
 #include "Animals.hpp"
+#include "Brains.hpp"
 
 class Cat : public Animal
 {
@@ -24,8 +25,6 @@ class Cat : public Animal
 		~Cat(void);
 		
 		void	makeSound(void) const;
-
-	
 };
 
 #endif

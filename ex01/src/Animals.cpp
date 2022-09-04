@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 20:24:16 by steh              #+#    #+#             */
-/*   Updated: 2022/09/03 23:27:03 by steh             ###   ########.fr       */
+/*   Updated: 2022/09/04 20:52:10 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,4 @@ void	Animal::makeSound(void) const
 string const &	Animal::getType(void) const
 {
 	return (this->_type);
-}
-
-Brain*	Animal::getBrain(void) const
-{
-	return (this->_brain);
 }

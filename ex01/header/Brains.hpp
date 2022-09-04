@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 22:57:53 by steh              #+#    #+#             */
-/*   Updated: 2022/09/03 23:28:01 by steh             ###   ########.fr       */
+/*   Updated: 2022/09/04 21:22:04 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,12 @@
 # define BRAIN_HPP
 
 #include <iostream>
+#include <iomanip> // std:setw
 
 using std::string;
+using std::cout;
+using std::endl;
+using std::setw;
 
 class Brain
 {
@@ -27,7 +31,9 @@ class Brain
 		Brain & operator=(Brain const & rhs);
 		virtual ~Brain(void);
 
-		string	*getIdeas(void) const;
+		void	setIdeas(size_t n, string idea);
+		string	getIdeas(size_t n) const;
+		void	printIdeas(void) const;
 };
 
 #endif

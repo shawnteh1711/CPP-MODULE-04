@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 20:23:15 by steh              #+#    #+#             */
-/*   Updated: 2022/09/03 23:30:26 by steh             ###   ########.fr       */
+/*   Updated: 2022/09/04 21:10:38 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,11 @@ class Animal
 
 		virtual void	makeSound(void) const;
 		string const &	getType(void) const;
+		virtual Brain	*getBrain(void) const = 0; 
+		// pure virtual function
+		// A pure virtual function is implemented by classes 
+		// which are derived from a Abstract class.
+
 };
 
 #endif

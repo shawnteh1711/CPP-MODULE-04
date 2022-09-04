@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 20:39:13 by steh              #+#    #+#             */
-/*   Updated: 2022/09/03 23:31:58 by steh             ###   ########.fr       */
+/*   Updated: 2022/09/04 21:10:09 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ class Cat : public Animal
 		~Cat(void);
 		
 		void	makeSound(void) const;
-		Brain*	giveBrain( void ) const;
+		Brain	*getBrain(void) const;
+		// void	setBrain(Brain &Brain);
+		// Brain*	giveBrain( void ) const;
 
 	
 };

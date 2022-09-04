@@ -6,7 +6,7 @@
 #    By: steh <steh@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/18 17:07:14 by steh              #+#    #+#              #
-#    Updated: 2022/09/03 23:01:24 by steh             ###   ########.fr        #
+#    Updated: 2022/09/04 22:02:27 by steh             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,6 @@ HEAD_DIR		=	header
 NAME			=	program
 # OBJS			=	$(addprefix $(OBJ_DIR)/, $(SRCS:.cpp=.o))
 OBJS			=	$(patsubst $(SRCS_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SRCS))
-# https://bytes.usc.edu/cs104/wiki/gcc/ for wshadow reference
 CFLAGS			=	-Wall -Wextra -Werror -std=c++98 -pedantic -g -fsanitize=address
 CC				=	c++	
 

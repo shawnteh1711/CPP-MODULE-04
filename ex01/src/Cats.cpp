@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 20:40:14 by steh              #+#    #+#             */
-/*   Updated: 2022/09/03 23:36:26 by steh             ###   ########.fr       */
+/*   Updated: 2022/09/04 22:01:07 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Cat::Cat(void) : Animal("Cat")
 {
+	this->_cat_brain = new Brain();
 	cout
 	<< "Cat Default constructor for "
 	<< this->_type
@@ -22,6 +23,7 @@ Cat::Cat(void) : Animal("Cat")
 
 Cat::~Cat(void)
 {
+	delete this->_cat_brain;
 	cout
 	<< "Cat destuctor for "
 	<< this->_type
@@ -30,7 +32,9 @@ Cat::~Cat(void)
 
 Cat::Cat(Cat const & src)
 {
-	this->_type = src.getType();
+	// this->_type = src.getType();
+	// this->_cat_brain = rhs.getBrain();
+	*this = src;
 	cout
 	<< "Cat copy constructor for "
 	<< this->_type
@@ -40,6 +44,7 @@ Cat::Cat(Cat const & src)
 Cat & Cat::operator=(Cat const & rhs)
 {
 	this->_type = rhs.getType();
+	this->_cat_brain = rhs.getBrain();
 	cout
 	<< "Cat assignment operator for "
 	<< this->_type
@@ -54,3 +59,17 @@ void	Cat::makeSound(void) const
 	<< this->_type
 	<< endl;
 }
+
+Brain	*Cat::getBrain(void) const
+{
+	cout
+	<< "Cat return a brain from "
+	<< this->_type
+	<< endl;
+	return (this->_cat_brain);
+}
+
+// void	Cat::setBrain(Brain &Brain)
+// {
+// 	this->_cat_brain = Brain;
+// }

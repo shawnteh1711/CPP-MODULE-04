@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 20:49:39 by steh              #+#    #+#             */
-/*   Updated: 2022/09/03 23:31:54 by steh             ###   ########.fr       */
+/*   Updated: 2022/09/04 22:24:22 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class Dog : public Animal
 {
 	private:
 		Brain	*_dog_brain;
+		int		_x;
 
 	public:
 		Dog(void);
@@ -29,7 +30,11 @@ class Dog : public Animal
 		~Dog(void);
 
 		void	makeSound(void) const;
-		Brain*	giveBrain( void ) const;
+		Brain	*getBrain(void) const;
+		void	setX(int x);
+		int		getX(void) const;
+		// void	setBrain(Brain &Brain);
+		// Brain*	giveBrain( void ) const;
 };
 
 #endif
