@@ -1,36 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dogs.hpp                                           :+:      :+:    :+:   */
+/*   Brains.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/03 20:49:39 by steh              #+#    #+#             */
-/*   Updated: 2022/09/05 09:18:09 by steh             ###   ########.fr       */
+/*   Created: 2022/09/03 22:57:53 by steh              #+#    #+#             */
+/*   Updated: 2022/09/04 21:22:04 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-#include "Animals.hpp"
-#include "Brains.hpp"
+#include <iostream>
+#include <iomanip> // std:setw
 
+using std::string;
+using std::cout;
+using std::endl;
+using std::setw;
 
-class Dog : public Animal
+class Brain
 {
 	private:
-		Brain	*_dog_brain;
-
+		string _ideas[100];
 	public:
-		Dog(void);
-		Dog(Dog const & src);
-		Dog & operator=(Dog const & rhs);
-		~Dog(void);
+		Brain(void);
+		Brain(Brain const & src);
+		Brain & operator=(Brain const & rhs);
+		virtual ~Brain(void);
 
-		void	makeSound(void) const;
-		Brain	*getBrain(void) const;
-		// void	setBrain(Brain &Brain);
+		void	setIdeas(size_t n, string idea);
+		string	getIdeas(size_t n) const;
+		void	printIdeas(void) const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 20:40:14 by steh              #+#    #+#             */
-/*   Updated: 2022/09/04 22:01:07 by steh             ###   ########.fr       */
+/*   Updated: 2022/09/05 10:56:35 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ Cat::~Cat(void)
 
 Cat::Cat(Cat const & src)
 {
-	// this->_type = src.getType();
-	// this->_cat_brain = rhs.getBrain();
-	*this = src;
+	this->_type = src.getType();
+	this->_cat_brain = new Brain(*src.getBrain());
+	// *this = src;
 	cout
 	<< "Cat copy constructor for "
 	<< this->_type
@@ -44,7 +44,9 @@ Cat::Cat(Cat const & src)
 Cat & Cat::operator=(Cat const & rhs)
 {
 	this->_type = rhs.getType();
-	this->_cat_brain = rhs.getBrain();
+	if (this->_cat_brain)
+		delete (this->_cat_brain);
+	this->_cat_brain = new Brain(*rhs.getBrain());
 	cout
 	<< "Cat assignment operator for "
 	<< this->_type

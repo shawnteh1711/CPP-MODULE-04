@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dogs.hpp                                           :+:      :+:    :+:   */
+/*   Cats.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/03 20:49:39 by steh              #+#    #+#             */
-/*   Updated: 2022/09/05 09:18:09 by steh             ###   ########.fr       */
+/*   Created: 2022/09/03 20:39:13 by steh              #+#    #+#             */
+/*   Updated: 2022/09/05 11:27:49 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
-#include "Animals.hpp"
+#include "AAnimals.hpp"
 #include "Brains.hpp"
 
-
-class Dog : public Animal
+class Cat : public AAnimal
 {
 	private:
-		Brain	*_dog_brain;
-
+		Brain	*_cat_brain;
 	public:
-		Dog(void);
-		Dog(Dog const & src);
-		Dog & operator=(Dog const & rhs);
-		~Dog(void);
-
+		Cat(void);
+		Cat(Cat const & src);
+		Cat & operator=(Cat const & rhs);
+		~Cat(void);
+		
 		void	makeSound(void) const;
 		Brain	*getBrain(void) const;
 		// void	setBrain(Brain &Brain);
+		// Brain*	giveBrain( void ) const;
 };
 
 #endif

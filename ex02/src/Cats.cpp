@@ -1,77 +1,77 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dogs.cpp                                           :+:      :+:    :+:   */
+/*   Cats.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/03 20:56:06 by steh              #+#    #+#             */
-/*   Updated: 2022/09/05 10:57:33 by steh             ###   ########.fr       */
+/*   Created: 2022/09/03 20:40:14 by steh              #+#    #+#             */
+/*   Updated: 2022/09/05 11:28:03 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dogs.hpp"
+#include "Cats.hpp"
 
-Dog::Dog(void) : Animal("Dog")
+Cat::Cat(void) : AAnimal("Cat")
 {
-	this->_dog_brain = new Brain();
+	this->_cat_brain = new Brain();
 	cout
-	<< "Dog Default constructor for "
+	<< "Cat Default constructor for "
 	<< this->_type
 	<< endl;
 }
 
-Dog::~Dog(void)
+Cat::~Cat(void)
 {
-	delete this->_dog_brain;
+	delete this->_cat_brain;
 	cout
-	<< "Dog destuctor for "
+	<< "Cat destuctor for "
 	<< this->_type
 	<< endl;
 }
 
-Dog::Dog(Dog const & src)
+Cat::Cat(Cat const & src)
 {
 	this->_type = src.getType();
-	this->_dog_brain = new Brain(*src.getBrain());
-	*this = src;
+	this->_cat_brain = new Brain(*src.getBrain());
+	// *this = src;
 	cout
-	<< "Dog copy constructor for "
+	<< "Cat copy constructor for "
 	<< this->_type
 	<< endl;
 }
 
-Dog & Dog::operator=(Dog const & rhs)
+Cat & Cat::operator=(Cat const & rhs)
 {
 	this->_type = rhs.getType();
-	if (this->_dog_brain)
-		delete (this->_dog_brain);
-	this->_dog_brain = new Brain(*rhs.getBrain());
+	if (this->_cat_brain)
+		delete (this->_cat_brain);
+	this->_cat_brain = new Brain(*rhs.getBrain());
 	cout
-	<< "Dog assignment operator for "
+	<< "Cat assignment operator for "
 	<< this->_type
 	<< endl;
 	return (*this);
 }
 
-void	Dog::makeSound(void) const
+void	Cat::makeSound(void) const
 {
 	cout
-	<< "Dog make woof from "
+	<< "Cat make meow from "
 	<< this->_type
 	<< endl;
 }
 
-Brain	*Dog::getBrain(void) const
+Brain	*Cat::getBrain(void) const
 {
 	cout
-	<< "Dog return a brain from "
+	<< "Cat return a brain from "
 	<< this->_type
 	<< endl;
-	return (this->_dog_brain);
+	return (this->_cat_brain);
 }
 
-// void	Dog::setBrain(Brain &Brain)
+// void	Cat::setBrain(Brain &Brain)
 // {
-// 	this->_dog_brain = Brain;
+// 	this->_cat_brain = Brain;
 // }

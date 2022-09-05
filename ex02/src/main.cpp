@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 23:15:40 by steh              #+#    #+#             */
-/*   Updated: 2022/09/05 11:01:27 by steh             ###   ########.fr       */
+/*   Updated: 2022/09/05 11:31:02 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 // -----------------------------------------------------------------
 // Despite having the same values each object has its own allocated memory
 // for its member variables
-#include "Animals.hpp"
+#include "AAnimals.hpp"
 #include "Brains.hpp"
 #include "Cats.hpp"
 #include "Dogs.hpp"
@@ -39,18 +39,18 @@ void	test4(void);
 
 int main(void)
 {
-	test1();
+	// test1();
 	// test2();
 	// test3();
-	// test4();
+	test4();
 	return (0);
 }
 
 
 void	test1(void)
 {
-	const Animal *j = new Dog();
-	const Animal *i = new Cat();
+	const AAnimal *j = new Dog();
+	const AAnimal *i = new Cat();
 
 	delete j;
 	delete i;
@@ -59,27 +59,27 @@ void	test1(void)
 
 void	test2(void)
 {
-	Animal	*animals[NUM];
+	AAnimal	*AAnimals[NUM];
 	Brain	*brain;
 
 	for (size_t i = 0; i < NUM; i++)
 	{
 		if (i < NUM / 2)
-			animals[i] = new Dog();
+			AAnimals[i] = new Dog();
 		else
-			animals[i] = new Cat();
-		cout << animals[i]->getType() << endl;
+			AAnimals[i] = new Cat();
+		cout << AAnimals[i]->getType() << endl;
 	}
 	
-	animals[0]->makeSound();
-	animals[3]->makeSound();
-	brain = animals[0]->getBrain();
+	AAnimals[0]->makeSound();
+	AAnimals[3]->makeSound();
+	brain = AAnimals[0]->getBrain();
 	brain->setIdeas(0, "idea number 0");
 	brain->setIdeas(1, "idea number 1");
 	brain->printIdeas();
 
 	for (size_t i = 0; i < NUM; i++)
-		delete animals[i];
+		delete AAnimals[i];
 
 	system("leaks program");
 }

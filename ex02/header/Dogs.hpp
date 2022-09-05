@@ -6,18 +6,18 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 20:49:39 by steh              #+#    #+#             */
-/*   Updated: 2022/09/05 09:18:09 by steh             ###   ########.fr       */
+/*   Updated: 2022/09/05 11:27:43 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DOG_HPP
 # define DOG_HPP
 
-#include "Animals.hpp"
+#include "AAnimals.hpp"
 #include "Brains.hpp"
 
 
-class Dog : public Animal
+class Dog : public AAnimal
 {
 	private:
 		Brain	*_dog_brain;

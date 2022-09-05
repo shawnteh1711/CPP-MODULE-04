@@ -6,13 +6,13 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 20:56:06 by steh              #+#    #+#             */
-/*   Updated: 2022/09/05 10:57:33 by steh             ###   ########.fr       */
+/*   Updated: 2022/09/05 11:28:07 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dogs.hpp"
 
-Dog::Dog(void) : Animal("Dog")
+Dog::Dog(void) : AAnimal("Dog")
 {
 	this->_dog_brain = new Brain();
 	cout
