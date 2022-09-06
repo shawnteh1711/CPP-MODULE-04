@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 13:20:12 by steh              #+#    #+#             */
-/*   Updated: 2022/09/06 20:06:32 by steh             ###   ########.fr       */
+/*   Updated: 2022/09/06 23:34:48 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ void	test3(void);
 
 int main(void)
 {
-	test1();
+	// test1();
 	// test2();
-	// test3();
+	test3();
 	system("leaks program");
 	return (0);
 }
@@ -95,9 +95,10 @@ void	test3(void)
 	characterB->use(0, *characterB);
 	tmp = src->createMateria("ice");
 	characterB->equip(tmp);
-	characterA->use(1, *characterB);
+	characterA->use(1, *characterB); // non existing slot in Character A character has slot 0 materia
 	characterB->use(1, *characterA);
 	characterB->unequip(1);
+	characterB->use(1, *characterA); // non existing slot after unequip
 	delete (characterB);
 	delete (characterA);
 	delete (src);
