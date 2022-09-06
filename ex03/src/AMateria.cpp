@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 13:03:58 by steh              #+#    #+#             */
-/*   Updated: 2022/09/05 22:11:40 by steh             ###   ########.fr       */
+/*   Updated: 2022/09/06 18:07:22 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,22 @@ string const	&AMateria::getType(void) const
 
 void	AMateria::use(ICharacter & target)
 {
-	cout << "AMaterial used on " << target.getName() << endl;
+	if (this->_type == "ice")
+	{
+		cout 
+		<< "* shoots an ice bolt at "
+		<< target.getName()
+		<< " *"
+		<< endl;
+	}
+	else if (this->_type == "cure")
+	{
+		cout
+		<< "* heals "
+		<< target.getName()
+		<< "'s wounds *"
+		<< endl;
+	}
+	else
+		cout << "* New Amateria use at " << target.getName() << endl;
 }

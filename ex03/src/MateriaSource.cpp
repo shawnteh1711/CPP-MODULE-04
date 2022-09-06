@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 16:08:52 by steh              #+#    #+#             */
-/*   Updated: 2022/09/05 21:56:50 by steh             ###   ########.fr       */
+/*   Updated: 2022/09/06 18:47:02 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,8 @@ void MateriaSource::learnMateria(AMateria*m)
 	}
 	else
 	{
-		cout << "No slot left." << m << endl;
+		cout << "No slot left for: " << m->getType() << endl;
+		delete (m);
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 18:53:30 by steh              #+#    #+#             */
-/*   Updated: 2022/09/05 22:10:09 by steh             ###   ########.fr       */
+/*   Updated: 2022/09/06 20:03:06 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,12 @@ Character::Character(string const & name) : _name(name)
 
 Character::Character(Character const & src)
 {
+	for (size_t i = 0; i < SIZE; i++)
+	{
+		if (this->_inv[i])
+			delete this->_inv[i];
+		this->_inv[i] = src._inv[i]->clone();
+	}
 	*this = src;
 	cout
 	<< "Character copy constructor "
@@ -58,17 +64,21 @@ Character::Character(Character const & src)
 
 Character & Character::operator=(Character const & rhs)
 {
-	for (size_t i = 0; i < SIZE; i++)
-	{
-		if (this->_inv[i])
-			delete this->_inv[i];
-		this->_inv[i] = rhs._inv[i];
-	}
-	this->_name = rhs._name;
+	// no change name for character
 	cout
 	<< "Character assignment operator for "
 	<< this->_name
 	<< endl;
+	for (size_t i = 0; i < SIZE; i++)
+	{
+		if (this->_inv[i])
+		{
+			delete this->_inv[i];
+			this->_inv[i] = NULL;
+		}
+		if (rhs._inv[i])
+			this->_inv[i] = rhs._inv[i]->clone();
+	}
 	return (*this);
 }
 
@@ -117,8 +127,6 @@ void	Character::equip(AMateria* m)
 		<< endl;
 		return ;
 	}
-	
-
 }
 
 void	Character::unequip(int idx)
@@ -139,7 +147,6 @@ void	Character::unequip(int idx)
 	}
 	else
 	{
-		this->_inv[idx] = NULL;
 		cout
 		<< this->_name
 		<< " unequip "
@@ -147,6 +154,8 @@ void	Character::unequip(int idx)
 		<< " at slot "
 		<< idx
 		<< endl;
+		delete (_inv[idx]);
+			this->_inv[idx] = NULL;
 	}
 
 
@@ -160,16 +169,12 @@ void	Character::use(int idx, ICharacter& target)
 		<< "Non-existing slot: "
 		<< idx
 		<< " by "
-		<< target.getName()
+		<< this->_name
 		<< endl;
 		return ;
 	}
-	this->_inv[idx]->use(target);
 	cout
 	<< this->_name
-	<< " use "
-	<< this->_inv[idx]->getType()
-	<< " on "
-	<< target.getName()
-	<< endl;
+	<< ": ";
+	this->_inv[idx]->use(target);
 }
