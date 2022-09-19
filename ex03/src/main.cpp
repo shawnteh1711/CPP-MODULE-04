@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 13:20:12 by steh              #+#    #+#             */
-/*   Updated: 2022/09/19 08:28:40 by steh             ###   ########.fr       */
+/*   Updated: 2022/09/19 17:16:53 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main(void)
 	test1();
 	// test2();
 	// test3();
-	// system("leaks program");
+	system("leaks program");
 	return (0);
 }
 
@@ -35,14 +35,28 @@ void	test1(void)
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
 	ICharacter* me = new Character("me");
-	AMateria* tmp;
+	AMateria *tmp;
 	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
 	ICharacter* bob = new Character("bob");
 	me->use(0, *bob);
 	me->use(1, *bob);
+	me->use(2, *bob);
+	me->use(3, *bob);
+	me->unequip(0);
+	me->unequip(1);
+	me->unequip(2);
+	me->unequip(3);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	me->unequip(3);
+	delete (tmp);
 	delete (bob);
 	delete (me);
 	delete (src);

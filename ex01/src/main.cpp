@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 23:15:40 by steh              #+#    #+#             */
-/*   Updated: 2022/09/19 08:11:50 by steh             ###   ########.fr       */
+/*   Updated: 2022/09/19 16:17:38 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ void	test4(void);
 
 int main(void)
 {
-	test1();
+	// test1();
 	// test2();
-	// test3();
+	test3();
 	// test4();
 	// system("leaks program");
 	return (0);
@@ -87,10 +87,13 @@ void	test3(void)
 	// Compare deep copy
 	Dog	dogA;
 	dogA.getBrain()->setIdeas(0, "first idea from dogA.");
+	dogA.getBrain()->setIdeas(2, "third idea from dogA.");
 
 	Dog	dogB = dogA;
 	dogB.getBrain()->getIdeas(0);
 	dogA.getBrain()->setIdeas(1, "second idea from dogA.");
+	
+	dogA.getBrain()->printIdeas();
 	dogB.getBrain()->printIdeas();
 }
 

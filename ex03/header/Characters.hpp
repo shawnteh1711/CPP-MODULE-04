@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 12:13:30 by steh              #+#    #+#             */
-/*   Updated: 2022/09/05 20:31:18 by steh             ###   ########.fr       */
+/*   Updated: 2022/09/19 17:03:08 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ class Character: public ICharacter
 	private:
 		string		_name;
 		AMateria	*_inv[4];
+		AMateria	*_unequip[4];
+
 	public:
 		Character(void);
 		Character(string const & name);

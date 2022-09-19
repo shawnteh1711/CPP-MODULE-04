@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 18:53:30 by steh              #+#    #+#             */
-/*   Updated: 2022/09/13 19:08:58 by steh             ###   ########.fr       */
+/*   Updated: 2022/09/19 17:16:43 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ Character::Character(void) : _name("no name yet")
 {
 	for (size_t i = 0; i < SIZE; i++)
 		this->_inv[i] = NULL;
+	for (size_t i = 0; i < SIZE; i++)
+		this->_unequip[i] = NULL;
 	cout
 	<< "Character default constructor for "
 	<< this->_name
@@ -30,6 +32,12 @@ Character::~Character(void)
 		if (this->_inv[i])
 			delete this->_inv[i];
 	}
+	for (size_t i = 0; i < SIZE; i++)
+	{
+		if (this->_unequip[i])
+			delete this->_unequip[i];
+	}
+	
 	cout
 	<< "Character destructor for "
 	<< this->_name
@@ -40,6 +48,8 @@ Character::Character(string const & name) : _name(name)
 {
 	for (size_t i = 0; i < SIZE; i++)
 		this->_inv[i] = NULL;
+	for (size_t i = 0; i < SIZE; i++)
+		this->_unequip[i] = NULL;
 	cout
 	<< "Character name constructor for "
 	<< this->_name
@@ -130,6 +140,8 @@ void	Character::equip(AMateria* m)
 
 void	Character::unequip(int idx)
 {
+	static int	i;
+	
 	if (idx >= 4 || idx < 0)
 	{
 		cout 
@@ -153,8 +165,18 @@ void	Character::unequip(int idx)
 		<< " at slot "
 		<< idx
 		<< endl;
-		delete (_inv[idx]);
+		if (i < SIZE)
+		{
+			this->_unequip[i] = this->_inv[idx];
 			this->_inv[idx] = NULL;
+			cout << "Material unequip: " << this->_unequip[i]->getType() << endl;
+			i++;
+		}
+		else
+		{
+			cout << "Fail to unequip as floor full of materia. " << endl;
+		}
+		this->_inv[idx] = NULL;
 	}
 }
 

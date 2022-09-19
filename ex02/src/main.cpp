@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 23:15:40 by steh              #+#    #+#             */
-/*   Updated: 2022/09/19 08:40:18 by steh             ###   ########.fr       */
+/*   Updated: 2022/09/19 16:39:15 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	test1(void)
 {
 	const AAnimal *j = new Dog();
 	const AAnimal *i = new Cat();
-
+	
 	delete j;
 	delete i;
 }
