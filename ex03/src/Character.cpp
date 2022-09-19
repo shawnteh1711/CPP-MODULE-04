@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 18:53:30 by steh              #+#    #+#             */
-/*   Updated: 2022/09/06 20:03:06 by steh             ###   ########.fr       */
+/*   Updated: 2022/09/13 19:08:58 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ Character::~Character(void)
 	<< "Character destructor for "
 	<< this->_name
 	<< endl;
-
 }
 
 Character::Character(string const & name) : _name(name)
@@ -157,8 +156,6 @@ void	Character::unequip(int idx)
 		delete (_inv[idx]);
 			this->_inv[idx] = NULL;
 	}
-
-
 }
 
 void	Character::use(int idx, ICharacter& target)

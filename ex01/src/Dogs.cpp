@@ -6,11 +6,11 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 20:56:06 by steh              #+#    #+#             */
-/*   Updated: 2022/09/05 10:57:33 by steh             ###   ########.fr       */
+/*   Updated: 2022/09/19 07:58:24 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dogs.hpp"
+#include "../header/Dogs.hpp"
 
 Dog::Dog(void) : Animal("Dog")
 {

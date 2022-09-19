@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 13:20:12 by steh              #+#    #+#             */
-/*   Updated: 2022/09/06 23:34:48 by steh             ###   ########.fr       */
+/*   Updated: 2022/09/19 08:28:40 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ void	test3(void);
 
 int main(void)
 {
-	// test1();
+	test1();
 	// test2();
-	test3();
-	system("leaks program");
+	// test3();
+	// system("leaks program");
 	return (0);
 }
 

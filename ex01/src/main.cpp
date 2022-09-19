@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 23:15:40 by steh              #+#    #+#             */
-/*   Updated: 2022/09/05 11:01:27 by steh             ###   ########.fr       */
+/*   Updated: 2022/09/19 08:11:50 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@
 // -----------------------------------------------------------------
 // Despite having the same values each object has its own allocated memory
 // for its member variables
-#include "Animals.hpp"
-#include "Brains.hpp"
-#include "Cats.hpp"
-#include "Dogs.hpp"
+#include "../header/Animals.hpp"
+#include "../header/Brains.hpp"
+#include "../header/Cats.hpp"
+#include "../header/Dogs.hpp"
 
 #define NUM 4
 
@@ -43,6 +43,7 @@ int main(void)
 	// test2();
 	// test3();
 	// test4();
+	// system("leaks program");
 	return (0);
 }
 
@@ -54,7 +55,6 @@ void	test1(void)
 
 	delete j;
 	delete i;
-	system("leaks program");
 }
 
 void	test2(void)
@@ -80,8 +80,6 @@ void	test2(void)
 
 	for (size_t i = 0; i < NUM; i++)
 		delete animals[i];
-
-	system("leaks program");
 }
 
 void	test3(void)
@@ -94,7 +92,6 @@ void	test3(void)
 	dogB.getBrain()->getIdeas(0);
 	dogA.getBrain()->setIdeas(1, "second idea from dogA.");
 	dogB.getBrain()->printIdeas();
-	system("leaks program");
 }
 
 void	test4(void)
@@ -106,7 +103,8 @@ void	test4(void)
 	catB = catA;
 	catB.getBrain()->getIdeas(0);
 	catA.getBrain()->setIdeas(1, "second idea from catA.");
+	cout << "Cat B still only have first idea form catA" << endl;
 	catB.getBrain()->printIdeas();
+	cout << "Cat A have both ideas from catA" << endl;
 	catA.getBrain()->printIdeas();
-	system("leaks program");
 }

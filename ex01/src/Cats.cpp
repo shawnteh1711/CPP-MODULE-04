@@ -6,11 +6,11 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 20:40:14 by steh              #+#    #+#             */
-/*   Updated: 2022/09/05 10:56:35 by steh             ###   ########.fr       */
+/*   Updated: 2022/09/19 07:59:59 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cats.hpp"
+#include "../header/Cats.hpp"
 
 Cat::Cat(void) : Animal("Cat")
 {
