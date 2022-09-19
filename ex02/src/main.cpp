@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 23:15:40 by steh              #+#    #+#             */
-/*   Updated: 2022/09/15 20:38:06 by steh             ###   ########.fr       */
+/*   Updated: 2022/09/19 08:40:18 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,11 @@ void	test4(void);
 
 int main(void)
 {
-	// test1();
+	test1();
 	// test2();
 	// test3();
-	test4();
+	// test4();
+	system("leaks program");
 	return (0);
 }
 
@@ -54,7 +55,6 @@ void	test1(void)
 
 	delete j;
 	delete i;
-	system("leaks program");
 }
 
 void	test2(void)
@@ -81,7 +81,6 @@ void	test2(void)
 	for (size_t i = 0; i < NUM; i++)
 		delete AAnimals[i];
 
-	system("leaks program");
 }
 
 void	test3(void)
@@ -94,7 +93,6 @@ void	test3(void)
 	dogB.getBrain()->getIdeas(0);
 	dogA.getBrain()->setIdeas(1, "second idea from dogA.");
 	dogB.getBrain()->printIdeas();
-	system("leaks program");
 }
 
 void	test4(void)
@@ -108,5 +106,4 @@ void	test4(void)
 	catA.getBrain()->setIdeas(1, "second idea from catA.");
 	catB.getBrain()->printIdeas();
 	catA.getBrain()->printIdeas();
-	system("leaks program");
 }

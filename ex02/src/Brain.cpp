@@ -6,11 +6,11 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 23:02:12 by steh              #+#    #+#             */
-/*   Updated: 2022/09/05 16:03:43 by steh             ###   ########.fr       */
+/*   Updated: 2022/09/19 08:37:00 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brains.hpp"
+#include "../header/Brains.hpp"
 
 Brain::Brain(void)
 {
